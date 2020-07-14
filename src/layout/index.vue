@@ -5,11 +5,11 @@
       @click="handleClickOutside"
     ></div>
 
-    <sidebar class="sidevar-container"></sidebar>
+    <!-- <sidebar class="sidevar-container"></sidebar> -->
 
     <div class="main-container">
       <div :class="{ 'fixed-header': fixedHeader }">
-        <navbar></navbar>
+        <!-- <navbar></navbar> -->
         <app-main></app-main>
       </div>
     </div>
@@ -17,15 +17,17 @@
 </template>
 
 <script>
+import { AppMain } from "./components";
+
 export default {
   name: "Layout",
   components: {
-    Navbar,
-    Sidebar,
+    // Navbar,
+    // Sidebar,
     AppMain
   },
   computed: {
-    sidevar() {
+    sidebar() {
       return this.$store.state.app.sidebar;
     },
     device() {
@@ -36,7 +38,7 @@ export default {
     },
     classObj() {
       return {
-        hideSidebar: !this.sidevar.opened,
+        hideSidebar: !this.sidebar.opened,
         openSideBar: this.sidebar.opened,
         withoutAnimation: this.sidebar.withoutAnimation,
         mobile: this.device === "mobile"

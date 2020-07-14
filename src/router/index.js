@@ -6,6 +6,10 @@ Vue.use(Router)
 import Layout from '@/layout'
 
 const consttantRoutes = [
+  {
+    path: '/',
+    component: Layout,
+  }
 ]
 
 const router = new Router({
