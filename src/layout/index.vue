@@ -1,9 +1,6 @@
 <template>
   <div :class="classObj" class="app-wrapper">
-    <div
-      v-if="device === 'mobile' && sidebar.opened"
-      @click="handleClickOutside"
-    ></div>
+    <div v-if="device === 'mobile' && sidebar.opened" @click="handleClickOutside"></div>
 
     <!-- <sidebar class="sidevar-container"></sidebar> -->
 
@@ -17,13 +14,13 @@
 </template>
 
 <script>
-import { AppMain } from "./components";
+import { AppMain, Sidebar } from "./components";
 
 export default {
   name: "Layout",
   components: {
     // Navbar,
-    // Sidebar,
+    Sidebar,
     AppMain
   },
   computed: {

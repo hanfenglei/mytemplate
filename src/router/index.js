@@ -3,23 +3,23 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-import Layout from '@/layout'
+// import Layout from '@/layout'
 
 const consttantRoutes = [
   {
-    path: '/',
-    component: Layout,
+    path: '/login',
+    component: () => import('@/views/login/index.vue')
   }
 ]
 
-const router = new Router({
-  // mode: 'history',
-  // base: process.env.BASE_URL,
+const createRouter = () => new Router({
   routes: consttantRoutes,
   scrollBehavior: () => ({ y: 0 })
 })
 
-export function resetRouter() {
+const router = createRouter();
+
+export function reseRouter() {
   const newRouter = createRouter()
   router.matcher = newRouter.matcher()
 }
