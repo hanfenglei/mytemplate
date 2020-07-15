@@ -4,4 +4,11 @@
   </div>
 </template>
 
+<script>
+console.log("xxxxxxxxxxxxxxxxxx");
+export default {
+  name: "App"
+};
+</script>
+
 <style></style>

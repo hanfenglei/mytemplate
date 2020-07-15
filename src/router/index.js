@@ -3,12 +3,34 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-// import Layout from '@/layout'
+import Layout from '@/layout'
 
 const consttantRoutes = [
   {
     path: '/login',
-    component: () => import('@/views/login/index.vue')
+    component: () => import('@/views/login/index.vue'),
+    hidden: true
+  },
+  {
+    path: '/404',
+    component: () => import('@/views/404'),
+    hidden: true
+  },
+  {
+    path: '/',
+    component: Layout,
+    redirect: 'dashboard',
+    children: [
+      {
+        path: 'dashboard',
+        name: 'Dashboard',
+        component: () => import('@/views/dashboard/index.vue'),
+        meta: {
+          title: 'Dashboard',
+          icon: 'dashboard'
+        }
+      }
+    ]
   }
 ]
 
